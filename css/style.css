@@ -157,7 +157,7 @@ nav .checkbox i {
     padding-top: 3.2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    /* gap: 4rem; */
 }
 
 
@@ -277,29 +277,27 @@ nav .checkbox i {
 }
 
 .skill__block {
-    padding-bottom: 60px;
+    padding-bottom: 2rem;
     grid-template-rows: repeat(1, 1fr);
     display: grid;
     justify-content: center;
     text-align: center;
+    gap: 16px;
 }
 
 .skill__block__soft {
     min-width: 300px;
     max-width: 520px;
-    padding-bottom: 60px;
+    padding-bottom: 2rem;
     grid-template-columns: repeat(1, 1fr);
     display: grid;
     justify-content: center;
     text-align: center;
+    gap: 16px;
 }
 
 .skill__block:last-child {
     padding-bottom: 0;
-}
-
-.skill__block > div:first-child {
-    padding-bottom: 16px;
 }
 
 .skill__block__soft:last-child {
@@ -322,7 +320,7 @@ nav .checkbox i {
 }
 
 .tech__skills {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     display: grid;
     justify-content: space-between;
     align-items: flex-end;
