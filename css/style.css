@@ -70,7 +70,7 @@ nav .checkbox i {
     cursor: pointer;
 }
 
-ul {
+.nav-list {
     display: flex;
     align-items: center;
     list-style: none;
@@ -78,7 +78,7 @@ ul {
     gap: 1rem;
 }
 
-ul li a {
+.nav-list li a {
     border: 2px solid transparent;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -87,10 +87,36 @@ ul li a {
     transition: 0.3s;
 }
 
-ul li a:active {
+.nav-list li a:active {
     border-top-color: var(--secondary-color);
     border-bottom-color: var(--secondary-color);
     color: var(--secondary-color);
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 3px;
+    background: var(--text-dark);
+    flex-direction: column;
+    margin: 6px;
+    transition: 0.3s;
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-5px, 7px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5.5px, -7px);
 }
 
 .footer__home {
@@ -100,7 +126,7 @@ ul li a:active {
     width: 100vw;
     max-width: var(--max-width);
     bottom: 0;
-    z-index: 99;
+    /* z-index: 99; */
 }
 
 .footer__portifolio {
@@ -530,35 +556,31 @@ ul li a:active {
     body {
         overflow-x: hidden;
     }
-    nav .checkbox {
+
+    .mobile-menu {
         display: block;
         z-index: 1;
     }
 
-    ul {
-        position: fixed;
-        width: 50%;
+    .nav-list {
+        position: absolute;
+        width: 50vw;
         height: 100vh;
-        right: -100%;
-        top: 0;
-        background-color: #ffffff;
-        flex-direction: column;
-        justify-content: top;
-        padding-top: 62px;
-        gap: max(5px, 10vh);
-        transition: right 0.5s ease-in-out;
-    }
-
-    nav #check:checked ~ ul {
         right: 0;
-        transform: translateX(0%);
-    }
-
-    nav .checkbox:checked ~ ul {
+        top: 0;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+        transition: transform 0.3s ease-in;
         transform: translateX(100%);
     }
 
-    ul li a {
+    .nav-list.active {
+        transform: translateX(0);
+    }
+
+    .nav-list li a {
         font-size: 1.25rem;
     }
 
@@ -572,7 +594,6 @@ ul li a:active {
         align-items: center;
         max-width: 100%;
     }
-
 
     .repository {
         display: flex;
